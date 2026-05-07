@@ -1,0 +1,31 @@
+{
+  "enabled_methods": ["yoomoney", "crypto", "cards"],
+  "demo_mode": false,
+  "yoomoney": {
+    "wallet": "",
+    "secret_key": "",
+    "enabled": true,
+    "commission_percent": 0
+  },
+  "crypto": {
+    "enabled": true,
+    "networks": {
+      "BTC": "",
+      "ETH": "",
+      "USDT_TRC20": "",
+      "USDT_ERC20": "",
+      "TON": "",
+      "SOL": ""
+    }
+  },
+  "cards": {
+    "enabled": true,
+    "number": "",
+    "holder": ""
+  },
+  "limits": {
+    "min_amount": 10,
+    "max_amount": 50000
+  },
+  "webhook_secret": "whsec_auto_generated_secret_1715000000"
+}

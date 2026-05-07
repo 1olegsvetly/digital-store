@@ -341,3 +341,39 @@ function getProductById($id) {
     
     return null;
 }
+
+/**
+ * Generate webhook secret key
+ */
+function generateWebhookSecret() {
+    return 'whsec_' . bin2hex(random_bytes(32));
+}
+
+/**
+ * Get payment configuration
+ */
+function getPaymentConfig() {
+    $configFile = DATA_DIR . '/config/payments.json';
+    if (file_exists($configFile)) {
+        return loadJson($configFile);
+    }
+    
+    // Default config
+    return [
+        'enabled_methods' => ['yoomoney', 'crypto'],
+        'demo_mode' => false,
+        'yoomoney' => ['wallet' => '', 'secret_key' => '', 'enabled' => true, 'commission_percent' => 0],
+        'crypto' => ['enabled' => true, 'networks' => ['BTC' => '', 'ETH' => '', 'USDT_TRC20' => '', 'USDT_ERC20' => '', 'TON' => '', 'SOL' => '']],
+        'cards' => ['enabled' => false, 'number' => '', 'holder' => ''],
+        'limits' => ['min_amount' => 10, 'max_amount' => 50000],
+        'webhook_secret' => generateWebhookSecret()
+    ];
+}
+
+/**
+ * Check if payment method is enabled
+ */
+function isPaymentMethodEnabled($method) {
+    $config = getPaymentConfig();
+    return in_array($method, $config['enabled_methods']);
+}

@@ -74,6 +74,10 @@ ob_start();
                 <span class="action-icon">🗺️</span>
                 <span class="action-title">Перегенерировать Sitemap</span>
             </a>
+            <a href="/admin/payments.php" class="action-card">
+                <span class="action-icon">💳</span>
+                <span class="action-title">Настройки оплаты</span>
+            </a>
             <a href="/" class="action-card" target="_blank">
                 <span class="action-icon">🌐</span>
                 <span class="action-title">Открыть сайт</span>
