@@ -61,6 +61,7 @@
                 <ul>
                     <li><a href="/catalog">Каталог</a></li>
                     <li><a href="/blog">Блог</a></li>
+                    <li><a href="/guarantees.php">Гарантии и возврат</a></li>
                     <li><a href="/sitemap.xml">Sitemap</a></li>
                 </ul>
             </div>

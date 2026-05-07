@@ -1,0 +1,21 @@
+{
+  "company": {
+    "name": "Digital Store",
+    "address": "г. Москва, ул. Цифровая, д. 10, офис 2026",
+    "email": "support@digital-store.com",
+    "phone": "+7 (999) 000-00-00",
+    "work_hours": "Пн-Вс: 09:00 - 21:00 (МСК)",
+    "inn": "0000000000",
+    "ogrn": "0000000000000"
+  },
+  "guarantees": {
+    "refund_period_hours": 48,
+    "replacement_policy": "Мгновенная замена при браке в течение гарантийного периода",
+    "support_response_time": "До 15 минут в рабочее время"
+  },
+  "social_proof": {
+    "total_sales": 15420,
+    "happy_customers": 3890,
+    "avg_rating": 4.9
+  }
+}

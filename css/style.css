@@ -195,3 +195,126 @@ body {
     .article-card-large a { flex-direction: column; }
     .article-card-large img { width: 100%; height: 200px; }
 }
+
+/* SEO Enhancer v1.0.6 Styles */
+
+/* Breadcrumbs */
+.breadcrumbs {
+    padding: 15px 0;
+    font-size: 0.9rem;
+}
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.breadcrumbs li {
+    display: inline-flex;
+    align-items: center;
+}
+.breadcrumbs li:not(:last-child)::after {
+    content: '/';
+    margin-left: 8px;
+    color: var(--gray);
+}
+.breadcrumbs a {
+    color: var(--primary);
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs li.active {
+    color: var(--gray);
+}
+
+/* Stock Indicator */
+.stock-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.stock-indicator .stock-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: currentColor;
+}
+.stock-in {
+    background: #d1fae5;
+    color: #059669;
+}
+.stock-low {
+    background: #fef3c7;
+    color: #d97706;
+}
+.stock-out {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+/* FAQ Section */
+.faq-section {
+    background: #f8fafc;
+    padding: 25px;
+    border-radius: 10px;
+}
+.faq-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+.accordion-button {
+    font-weight: 500;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #eef2ff;
+    color: var(--primary);
+}
+
+/* Related Products */
+.related-products h2,
+.related-articles h2 {
+    margin: 30px 0 20px;
+    font-size: 1.3rem;
+}
+
+/* Article Meta Updates */
+.date-updated {
+    color: var(--warning);
+    font-size: 0.85rem;
+    margin-left: 10px;
+}
+
+/* Product Description */
+.product-description {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+.product-description h2 {
+    margin-bottom: 15px;
+}
+
+/* E-E-A-T Trust Badges */
+.trust-badges {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.85rem;
+}
