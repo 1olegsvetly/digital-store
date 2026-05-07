@@ -89,7 +89,9 @@ ob_start();
                 </div>
                 
                 <div class="product-actions">
-                    <button class="btn btn-primary btn-large" onclick="alert('Функция покупки в разработке')">Купить сейчас</button>
+                    <button class="btn btn-primary btn-large" onclick="addToCartAndCheckout('<?= $product['id'] ?>')">
+                        🛒 Купить сейчас
+                    </button>
                 </div>
                 
                 <div class="product-description">
@@ -107,5 +109,27 @@ $content = ob_get_clean();
 $pageTitle = $product['seo']['meta_title'] ?? $product['title'] . ' — ' . $config['site_name'];
 $pageDescription = $product['seo']['meta_description'] ?? $product['description_short'];
 $canonical = $product['seo']['canonical'] ?? '';
+
+ob_start();
+?>
+<script>
+function addToCartAndCheckout(productId) {
+    // Создаем форму для добавления в корзину и редиректа на checkout
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = '/checkout/index.php';
+    
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'add_to_cart';
+    input.value = productId;
+    
+    form.appendChild(input);
+    document.body.appendChild(form);
+    form.submit();
+}
+</script>
+<?php
+$scripts = ob_get_clean();
 
 include __DIR__ . '/../templates/layout.php';

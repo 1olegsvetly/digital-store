@@ -320,3 +320,24 @@ function generateSitemap() {
     
     return count($urls);
 }
+
+/**
+ * Get product by ID from any category
+ */
+function getProductById($id) {
+    $categories = ['facebook', 'instagram', 'google', 'tiktok', 'twitter', 'telegram'];
+    
+    foreach ($categories as $cat) {
+        $file = DATA_DIR . "/products/{$cat}.json";
+        if (file_exists($file)) {
+            $products = loadJson($file);
+            foreach ($products as $p) {
+                if ($p['id'] === $id) {
+                    return $p;
+                }
+            }
+        }
+    }
+    
+    return null;
+}
