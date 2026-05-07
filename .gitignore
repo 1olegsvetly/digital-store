@@ -1,0 +1,26 @@
+```
+# Dependencies
+vendor/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+
+# Data files that might be generated
+data/*.log
+data/*/*.log
+
+# Backup files
+*~
+*.bak
+*.backup
+```

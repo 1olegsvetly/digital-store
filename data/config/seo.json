@@ -1,0 +1,8 @@
+{
+  "product_meta_title": "{title} — купить от {price}{currency} | {site_name}",
+  "product_meta_description": "{description_short}. Гарантия {guarantee_hours}ч. Мгновенная выдача.",
+  "category_meta_title": "{category} — купить цифровые товары | {site_name}",
+  "category_meta_description": "Большой выбор товаров категории {category}. Лучшие цены, гарантия качества.",
+  "article_meta_title": "{title} — экспертное руководство | Блог {site_name}",
+  "article_meta_description": "{excerpt}"
+}

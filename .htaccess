@@ -1,0 +1,64 @@
+# Apache Configuration for Digital Store
+
+# Enable Rewrite Engine
+RewriteEngine On
+
+# Redirect to HTTPS (uncomment if using SSL)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Protect data directory
+<IfModule mod_rewrite.c>
+    RewriteRule ^data/ - [F,L]
+    RewriteRule ^includes/ - [F,L]
+    RewriteRule ^templates/ - [F,L]
+    RewriteRule ^cache/ - [F,L]
+    RewriteRule ^sessions/ - [F,L]
+</IfModule>
+
+# Prevent access to JSON files
+<FilesMatch "\.(json)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to hidden files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Pretty URLs for catalog
+RewriteRule ^catalog/?$ catalog/index.php [QSA,L]
+RewriteRule ^catalog/([a-z0-9-]+)/([a-z0-9-]+)$ catalog/product.php?slug=$2 [QSA,L]
+RewriteRule ^catalog/([a-z0-9-]+)$ catalog/index.php?cat=$1 [QSA,L]
+
+# Pretty URLs for blog
+RewriteRule ^blog/?$ blog/index.php [QSA,L]
+RewriteRule ^blog/([a-z0-9-]+)$ blog/article.php?slug=$1 [QSA,L]
+
+# Admin routes
+RewriteRule ^admin/?$ admin/index.php [QSA,L]
+RewriteRule ^admin/login/?$ admin/login.php [QSA,L]
+RewriteRule ^admin/logout/?$ admin/logout.php [QSA,L]
+
+# Error pages
+ErrorDocument 404 /404.php
+ErrorDocument 500 /500.php
+
+# Enable compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
+
+# Browser caching
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+</IfModule>

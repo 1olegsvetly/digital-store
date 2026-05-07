@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /includes/
+Disallow: /templates/
+Disallow: /cache/
+Disallow: /sessions/
+
+Sitemap: https://yoursite.com/sitemap.xml

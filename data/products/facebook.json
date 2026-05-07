@@ -1,0 +1,29 @@
+[
+  {
+    "id": "fb_auto_001",
+    "slug": "facebook-avtoregi-podtverzhdeny",
+    "category": "facebook",
+    "subcategory": "avtoregi",
+    "title": "Аккаунты FB | Подтверждены по почте",
+    "description_short": "Автореги Facebook с подтверждением по email",
+    "description_full": "<p>Качественные аккаунты Facebook с подтверждением по электронной почте. Подходят для рекламы и продвижения.</p><ul><li>Возраст: от 1 месяца</li><li>Подтверждение: email</li><li>Гарантия: 48 часов</li></ul>",
+    "price": 0.148,
+    "currency": "USD",
+    "stock": 6892,
+    "min_order": 100,
+    "guarantee_hours": 48,
+    "rating": 5,
+    "defect_percent": 2.2,
+    "image_url": "/img/fb-auto.jpg",
+    "images": ["/img/fb-1.jpg", "/img/fb-2.jpg"],
+    "seo": {
+      "meta_title": "Купить аккаунты Facebook — от $0.148 | Магазин",
+      "meta_description": "Автореги Facebook с подтверждением. Гарантия 48ч. Мгновенная выдача.",
+      "keywords": "facebook,аккаунты,автореги,купить",
+      "canonical": "https://yoursite.com/catalog/facebook/avtoregi"
+    },
+    "created_at": "2026-05-07T10:00:00Z",
+    "updated_at": "2026-05-07T12:30:00Z",
+    "status": "active"
+  }
+]

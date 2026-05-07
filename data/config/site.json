@@ -1,0 +1,15 @@
+{
+  "site_name": "Digital Store",
+  "site_url": "https://yoursite.com",
+  "description": "Магазин цифровых товаров — аккаунты, ключи, доступы",
+  "email": "support@yoursite.com",
+  "phone": "+1234567890",
+  "currency": "USD",
+  "logo": "/img/logo.png",
+  "footer_text": "© 2026 Digital Store. Все права защищены.",
+  "social": {
+    "telegram": "",
+    "discord": "",
+    "twitter": ""
+  }
+}
