@@ -34,8 +34,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['csrf_token'])) {
                     'ETH' => trim($_POST['crypto_eth'] ?? ''),
                     'USDT_TRC20' => trim($_POST['crypto_usdt_trc20'] ?? ''),
                     'USDT_ERC20' => trim($_POST['crypto_usdt_erc20'] ?? ''),
+                    'USDT_BEP20' => trim($_POST['crypto_usdt_bep20'] ?? ''),
+                    'USDT_ARBITRUM' => trim($_POST['crypto_usdt_arbitrum'] ?? ''),
+                    'USDT_POLYGON' => trim($_POST['crypto_usdt_polygon'] ?? ''),
+                    'USDT_SOLANA' => trim($_POST['crypto_usdt_solana'] ?? ''),
+                    'BCH' => trim($_POST['crypto_bch'] ?? ''),
+                    'BCH_BEP20' => trim($_POST['crypto_bch_bep20'] ?? ''),
+                    'BNB' => trim($_POST['crypto_bnb'] ?? ''),
+                    'LTC' => trim($_POST['crypto_ltc'] ?? ''),
+                    'DOGE' => trim($_POST['crypto_doge'] ?? ''),
                     'TON' => trim($_POST['crypto_ton'] ?? ''),
-                    'SOL' => trim($_POST['crypto_sol'] ?? '')
+                    'TRX' => trim($_POST['crypto_trx'] ?? ''),
+                    'DASH' => trim($_POST['crypto_dash'] ?? ''),
+                    'SOL' => trim($_POST['crypto_sol'] ?? ''),
+                    'NOTCOIN' => trim($_POST['crypto_notcoin'] ?? '')
                 ]
             ],
             'cards' => [
@@ -72,7 +84,15 @@ if (file_exists($configFile)) {
         'enabled_methods' => ['yoomoney', 'crypto'],
         'demo_mode' => false,
         'yoomoney' => ['wallet' => '', 'secret_key' => '', 'enabled' => true, 'commission_percent' => 0],
-        'crypto' => ['enabled' => true, 'networks' => ['BTC' => '', 'ETH' => '', 'USDT_TRC20' => '', 'USDT_ERC20' => '', 'TON' => '', 'SOL' => '']],
+        'crypto' => [
+            'enabled' => true, 
+            'networks' => [
+                'BTC' => '', 'ETH' => '', 'USDT_TRC20' => '', 'USDT_ERC20' => '',
+                'USDT_BEP20' => '', 'USDT_ARBITRUM' => '', 'USDT_POLYGON' => '', 'USDT_SOLANA' => '',
+                'BCH' => '', 'BCH_BEP20' => '', 'BNB' => '', 'LTC' => '', 'DOGE' => '',
+                'TON' => '', 'TRX' => '', 'DASH' => '', 'SOL' => '', 'NOTCOIN' => ''
+            ]
+        ],
         'cards' => ['enabled' => false, 'number' => '', 'holder' => ''],
         'limits' => ['min_amount' => 10, 'max_amount' => 50000],
         'webhook_secret' => generateWebhookSecret()
@@ -286,13 +306,73 @@ $csrfToken = generateCsrfToken();
                         </div>
                         
                         <div class="form-group">
+                            <label>USDT BEP20:</label>
+                            <input type="text" name="crypto_usdt_bep20" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['USDT_BEP20']); ?>" placeholder="Ваш USDT BEP20 кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>USDT Arbitrum:</label>
+                            <input type="text" name="crypto_usdt_arbitrum" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['USDT_ARBITRUM']); ?>" placeholder="Ваш USDT Arbitrum кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>USDT Polygon:</label>
+                            <input type="text" name="crypto_usdt_polygon" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['USDT_POLYGON']); ?>" placeholder="Ваш USDT Polygon кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>USDT Solana:</label>
+                            <input type="text" name="crypto_usdt_solana" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['USDT_SOLANA']); ?>" placeholder="Ваш USDT Solana кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>BCH (Bitcoin Cash):</label>
+                            <input type="text" name="crypto_bch" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['BCH']); ?>" placeholder="Ваш BCH кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>BCH BEP20:</label>
+                            <input type="text" name="crypto_bch_bep20" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['BCH_BEP20']); ?>" placeholder="Ваш BCH BEP20 кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>BNB:</label>
+                            <input type="text" name="crypto_bnb" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['BNB']); ?>" placeholder="Ваш BNB кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>LTC (Litecoin):</label>
+                            <input type="text" name="crypto_ltc" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['LTC']); ?>" placeholder="Ваш LTC кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>DOGE:</label>
+                            <input type="text" name="crypto_doge" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['DOGE']); ?>" placeholder="Ваш DOGE кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
                             <label>TON:</label>
                             <input type="text" name="crypto_ton" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['TON']); ?>" placeholder="Ваш TON кошелёк">
                         </div>
                         
                         <div class="form-group">
+                            <label>TRX (Tron):</label>
+                            <input type="text" name="crypto_trx" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['TRX']); ?>" placeholder="Ваш TRX кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>DASH:</label>
+                            <input type="text" name="crypto_dash" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['DASH']); ?>" placeholder="Ваш DASH кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
                             <label>SOL (Solana):</label>
                             <input type="text" name="crypto_sol" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['SOL']); ?>" placeholder="Ваш SOL кошелёк">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>NOTCOIN:</label>
+                            <input type="text" name="crypto_notcoin" value="<?php echo htmlspecialchars($currentConfig['crypto']['networks']['NOTCOIN']); ?>" placeholder="Ваш NOTCOIN кошелёк">
                         </div>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
   "enabled_methods": ["yoomoney", "crypto", "cards"],
   "demo_mode": false,
   "yoomoney": {
-    "wallet": "",
+    "wallet": "4100118573969319",
     "secret_key": "",
     "enabled": true,
     "commission_percent": 0
@@ -10,12 +10,24 @@
   "crypto": {
     "enabled": true,
     "networks": {
-      "BTC": "",
-      "ETH": "",
-      "USDT_TRC20": "",
-      "USDT_ERC20": "",
-      "TON": "",
-      "SOL": ""
+      "BTC": "bc1qms43xhl4pgdg2440tp6alqf8wnk8exp6ucdd3j",
+      "ETH": "0xF03f3009663Aa1eA87266d97f9FE6C8eFdDE39aa",
+      "USDT_TRC20": "TQE1G573kkFzGfZJSnWhh8NecEhEKkK1we",
+      "USDT_ERC20": "0xF03f3009663Aa1eA87266d97f9FE6C8eFdDE39aa",
+      "USDT_BEP20": "0xF03f3009663Aa1eA87266d97f9FE6C8eFdDE39aa",
+      "USDT_ARBITRUM": "0xF03f3009663Aa1eA87266d97f9FE6C8eFdDE39aa",
+      "USDT_POLYGON": "0xF03f3009663Aa1eA87266d97f9FE6C8eFdDE39aa",
+      "USDT_SOLANA": "63WaxZtxNu8hD4HahkKctRtrt4ALEec7ts28gVhqzYL4",
+      "BCH": "qqqap7stra24q0zfjjav5t0ajyaunzftcxurqjhvp",
+      "BCH_BEP20": "0xF03f3009663Aa1eA87266d97f9FE6C8eFdDE39aa",
+      "BNB": "bnb1us4xr0qwu4mavp7ymuclk4wlgnnzjew6nk2fwv",
+      "LTC": "ltc1qvqdagz6u370tnkcvs32nutv35tgctru79kjakv",
+      "DOGE": "D7ZjHwLMXkRov32Zc1JMX7XP8N1W3K8B18",
+      "TON": "EQB4Zsfn3my_b7jAVoUkWpctcgIXo-IEc1gBIjPRjIArdKdQ",
+      "TRX": "TQE1G573kkFzGfZJSnWhh8NecEhEKkK1we",
+      "DASH": "XoSpuq24AKJrGtRBinXM1zzF4TtCyUUPsX",
+      "SOL": "63WaxZtxNu8hD4HahkKctRtrt4ALEec7ts28gVhqzYL4",
+      "NOTCOIN": ""
     }
   },
   "cards": {
