@@ -62,13 +62,17 @@ ob_start();
     <div class="quick-actions">
         <h2>Быстрые действия</h2>
         <div class="actions-grid">
-            <a href="/admin/import-products.php" class="action-card">
+            <a href="/admin/export-templates.php" class="action-card">
                 <span class="action-icon">📥</span>
-                <span class="action-title">Импорт товаров CSV</span>
+                <span class="action-title">Шаблоны CSV</span>
+            </a>
+            <a href="/admin/import-products.php" class="action-card">
+                <span class="action-icon">📦</span>
+                <span class="action-title">Импорт товаров</span>
             </a>
             <a href="/admin/import-articles.php" class="action-card">
                 <span class="action-icon">📝</span>
-                <span class="action-title">Импорт статей CSV</span>
+                <span class="action-title">Импорт статей</span>
             </a>
             <a href="/admin/sitemap.php" class="action-card">
                 <span class="action-icon">🗺️</span>
